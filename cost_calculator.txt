@@ -1,0 +1,45 @@
+from math import ceil
+r1=int(input("Enter the first hours charges-:\n"))
+n=int(input("Enter the first hours value-:\n"))
+r2=int(input("Enter the second hours charges-:\n"))
+x=int(input("Enter total travel hours-:\n"))
+
+cost=n*r1 + r2*(ceil(x/60)-n)
+print(cost)
+
+
+print("0:b",format(int))
+
+=============================================This will deal with in all first hours
+import math
+r1=int(input())
+n=int(input())
+r2=int(input())
+x=int(input())
+
+total_hrs=math.ceil(x/60)
+print("total_hrs-: {}".format(total_hrs))
+# first n hours cost
+f_n_cost=n*r1
+print("first {} hrs cost-: {}".format(n,f_n_cost))
+if total_hrs>n:
+    re_cost=(total_hrs-n)*r2
+else:
+    re_cost=0
+print("remaining {} hrs cost-: {}".format(total_hrs-n,re_cost))
+total_cost=f_n_cost+re_cost
+print(total_cost)
+
+=============================
+from math import ceil 
+if __name__=="__main__":
+    r1=int(input())
+    n=int(input())
+    r2=int(input())
+    x=int(input())
+    total_cost=0
+    total_hrs=ceil(x/60)
+    total_cost+=n*r1
+    if total_hrs>n:
+        total_cost+=(total_hrs-n)*r2
+    print(total_cost)

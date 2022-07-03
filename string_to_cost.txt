@@ -1,0 +1,31 @@
+n=input()
+res=0
+tmp=''
+for i in range(len(n)):
+    if n[i].isdigit() == True:
+        tmp += n[i]
+    elif tmp != '' :
+        res += int(tmp)
+        tmp=''
+        
+if tmp != '' :
+    res += int(tmp)
+    tmp=''
+print(res)
+
+=============================
+s='1xyz23a1'
+# s=input()1xyz23
+tmp=''
+cost=0
+for i in range(len(s)):
+    if s[i].isnumeric():
+        tmp+=s[i]
+    if s[i].isalpha():
+        if len(tmp)!=0:
+            cost+=int(tmp)
+            tmp=''
+if (len(tmp)!=0):
+    cost+=int(tmp)
+print(cost)
+        

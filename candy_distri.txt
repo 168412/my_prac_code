@@ -1,0 +1,20 @@
+def func(i,j):
+    global ans
+    if(max(i,j)>=a-(i+j)):
+        # print(max(i,j)," first if-: ",a-(i+j))
+        # print(max(i,j)>=a-(i+j))
+        return;
+    if(i==j):
+            ans+=3
+            # print(i,"2nd if -ans is-:",ans)
+            func(i+1,j+1)
+    else: 
+            ans+=6;
+            # print(i,"else -ans is-:",ans)
+    # print("last-: ",i,j)
+    func(i,j+1);
+
+a=int(input())
+ans=0
+func(1,1)
+print(ans)

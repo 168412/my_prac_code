@@ -1,0 +1,45 @@
+import java.util.*;
+public class Main
+{
+    
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n= sc.nextInt();
+	    
+	    int x=0, y=0;
+	    int dist =10;
+	    char ch ='R';
+	    while(n>0){
+	    switch(ch)
+	    {
+	        case 'R':
+	            x=x+dist;
+	            dist=dist+10;
+	            ch = 'U';
+	            break;
+	        case 'U':
+	          y=y+dist;
+	          dist=dist+10;
+	          ch = 'L';
+	          break; 
+	        case 'L':
+	          x=x-dist;
+	          dist=dist+10;
+	          ch = 'D';
+	          break; 
+	        case 'D':
+	          y=y-dist;
+	          dist=dist+10;
+	          ch = 'A';
+	          break; 
+	        case 'A':
+	          x=x+dist;
+	          dist=dist+10;
+	          ch = 'R';
+	          break; 
+	    }
+	    n--;
+	    }
+		System.out.println(x+" "+y);
+	}
+}

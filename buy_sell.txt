@@ -1,0 +1,119 @@
+once buy and sell once.
+
+package rahul;
+import java.util.*;
+
+public class Example
+{
+	public static int maxProfit(int [] prices)
+	{
+		int n=prices.length;
+		int cost =0;
+		int maxCost=0;
+		
+		if(n==0) {
+			return 0;
+		}
+		
+		int minPrice = prices[0];
+		for(int i=0; i<n; i++)
+		{
+			minPrice = Math.min(minPrice, prices[i] );
+			
+			cost= prices[i] - minPrice;
+			
+			maxCost =Math.max(maxCost, cost);
+			
+		}
+		return maxCost;
+	}
+	
+	//driver code
+	public static void main(String [] args)
+	{
+		// stock prices on consecutive days
+        int prices[] = { 7, 1, 5, 3, 6, 4 };
+        System.out.println(maxProfit(prices));
+	}
+}
+
+---------------------------------------python
+def maxprofit(price):
+    maxcost=0
+    minprice=price[0]
+    for i in range(len(price)):
+        minprice=min(minprice,price[i])
+        cost=price[i] - minprice
+        maxcost=max(maxcost,cost)
+    return maxcost
+
+if __name__ =='__main__':
+    price = [100, 180, 260, 310, 40, 535, 695]
+    print(maxprofit(price))
+    
+========== sell and buy on diff. day
+def maxprofit(price,n):
+    if n==1:
+        return;
+    i=0
+    while (i<(n-1)):
+        while(i<(n-1) and price[i+1]<=price[i]):
+            i+=1
+        if i==(n-1):
+            break
+        buy=i
+        i+=1
+        
+        while(i<n and price[i]>=price[i-1]):
+            i+=1
+        sell=i-1
+        print("Buy on day-: ",buy," at price-: ",price[buy],"\t"
+                ,"Sell on day-: ",sell,' at price-: ',price[sell])   
+
+if __name__ =='__main__':
+    price = [100, 180, 260, 310, 40, 535, 695]
+    maxprofit(price,len(price))
+
+----------------------------------------------------------------------------------------------------------------------------
+Peak valley approach==== can buy or sell once at a day.
+
+package rahul;
+import java.util.*;
+
+public class Example
+{
+	public static int maxProfit(int [] prices)
+	{
+		int n=prices.length;
+		int maxCost=0;
+	
+		for(int i=1; i<n; i++)
+		{
+			if(prices[i] > prices[i-1])
+				maxCost += prices[i]-prices[i-1];
+			
+		}
+		return maxCost;
+	}
+	
+	//driver code
+	public static void main(String [] args)
+	{
+		// stock prices on consecutive days
+        int prices[] = {  100, 180, 260, 310, 40, 535, 695 };
+        System.out.println(maxProfit(prices));
+	}
+}
+--------------------------------------------------Python
+
+def maxprofit(price):
+    maxcost=0
+    for i in range(1,len(price)):
+        if price[i]>price[i-1]:
+            maxcost+=price[i]-price[i-1]
+        
+    return maxcost
+
+if __name__ =='__main__':
+    price = [100, 180, 260, 310, 40, 535, 695]
+    print(maxprofit(price))

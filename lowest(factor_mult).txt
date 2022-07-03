@@ -1,0 +1,24 @@
+def isprime(num):
+    if num>1:
+        for i in range(2,(num//2)+1):
+            if (num%i) == 0:
+                break
+        else:
+            return True
+
+n=int(input())
+l=[]
+if n<10:
+    print(n+10)
+elif n>9:
+    if isprime(n):
+        print("Not Possible")
+    else:
+        for i in range(9,1,-1):
+            while (n%i == 0):
+                n=n//i
+                l.append(i)
+        for i in range(len(l)-1,-1,-1):
+            print(l[i],end='')
+
+        

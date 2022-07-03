@@ -1,0 +1,156 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    String str = sc.nextLine();
+	    int var=0;
+	    int len =str.length();
+	    for(int i=0; i<len;i++)
+	    {
+	        char ch = str.charAt(i);
+	        var=i;
+	        if(ch>='a' && ch<='z' || ch >='A' && ch<='Z')
+	        break;
+	    }
+	    String str_num= str.substring(0,var);
+	    String str_len= str.substring(var);
+	    int n=Integer.parseInt(str_num);
+	    if(n==str_len.length())
+	    System.out.println("TRUE "+n);
+	    else
+		System.out.println("FALSE "+n);	
+	}
+}
+
+
+
+==============================================================
+
+// Java code for the above program
+class Main{
+		
+// function to count the
+// ordered triplets (R, G, B)
+static int countTriplets(String color)
+{
+	int result = 0, Blue_Count = 0;
+	int Red_Count = 0;
+	int len = color.length();
+	int i;
+	
+	// count the B(blue) colour
+	for (i = 0; i < len ; i++)
+	{
+		if (color.charAt(i) == 'B')
+			Blue_Count++;
+	}
+
+	for (i = 0; i < len ; i++)
+	{
+		if (color.charAt(i) == 'B')
+			Blue_Count--;
+		if (color.charAt(i) == 'R')
+			Red_Count++;
+		if (color.charAt(i) == 'G')
+			result += Red_Count * Blue_Count;
+	}
+	return result;
+}
+
+// Driver Code
+public static void main (String[] args)
+{
+	String color = "RBG";
+	System.out.println(countTriplets(color));
+}
+
+}
+
+
+
+
+==================================================================================
+
+
+
+
+
+
+public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    String str = sc.nextLine();
+	    int var=0;
+	    int len =str.length();
+	    for(int i=0; i<len;i++)
+	    {
+	        char ch = str.charAt(i);  
+	        if(Character.isDigit(ch))
+	        	var=i+1;	
+	        else
+	        break;
+	    }
+	    String str_num= str.substring(0,var);
+	    String str_len= str.substring(var);
+	    int n=Integer.parseInt(str_num);
+	    if(n==str_len.length())
+	    System.out.println("TRUE "+n);
+	    else
+		System.out.println("FALSE "+n);	
+	}
+====================
+a = input()
+tmp=0
+for i in range(len(a)):
+    if a[i].isdigit() == False:
+        tmp=i
+        break
+if int(a[:tmp])==len(a[tmp:]):
+    print("True {}".format(int(a[:tmp])))
+else:
+    print("False {}".format(int(a[:tmp])))
+=============================================================================================
+
+public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    String str = sc.nextLine();
+	    int count=0;
+	    for(int i=0;i<str.length();i++)
+	    {
+	     if(str.charAt(i)=='H')
+	     {
+	    	 for(int j=i;j<str.length();j++)
+	    	 {
+	    		 if(str.charAt(j)=='S')
+	    		 {
+	    			 for(int k=j; k<str.length();k++)
+	    			 {
+	    				 if(str.charAt(k)=='L')
+	    					 count+=1;
+	    			 }
+	    		 }
+	    	 }
+	     }
+	    }
+		System.out.println(count);
+
+===========================================================================
+
+def CountTriplets(a, n):
+ 
+    cnt = 0;
+ 
+    for i in range(0, n):
+        for j in range(i + 1, n):
+            for k in range(j + 1, n):
+                if a[i]+a[j]+a[k]=='abc':
+                    print(i,j,k,a[i]+a[j]+a[k])
+                    cnt+=1
+    return cnt;
+ 
+a = 'abcbabbac';
+ 
+n = len(a);
+ 
+# Function Call
+print(CountTriplets(a, n))

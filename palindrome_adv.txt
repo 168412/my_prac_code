@@ -1,0 +1,57 @@
+def if_pal(s):
+    if len(s)==1:
+        return True
+    s1=s[::-1]
+    return s1==s
+    
+# s=input()
+s="nayannamantenet"
+# na ay annamantenet
+l=len(s)
+flag =False
+for i in range(1,l-1):
+    s1=s[:i]
+    if if_pal(s1):
+        for j in range(1,l-i):
+            s2=s[i:i+j]
+            s3=s[i+j:]
+            if if_pal(s2) and if_pal(s3):
+                print(s1)
+                print(s2)
+                print(s3)
+                flag=True
+            if flag:
+                break
+    if flag:
+        break
+if flag==False:
+        print("Impossible")
+==================================================
+
+# import sys
+def if_pal(s):
+    if len(s)==1:
+        return True
+    s1=s[::-1]
+    return s1==s
+    
+# s=input()
+s="nayannamantenet"
+# na ay annamantenet
+l=len(s)
+flag =False
+for i in range(1,l-1):
+    s1=s[:i]
+    if if_pal(s1):
+        for j in range(1,l-i):
+            s2=s[i:i+j]
+            s3=s[i+j:]
+            if if_pal(s2) and if_pal(s3):
+                print(s1+"\n"+s2+"\n"+s3)
+                flag=True
+                # sys.exit()
+                exit()
+print("Impossible")
+        
+use exit()--when sys is not available
+if sys is available then use sys.exit()

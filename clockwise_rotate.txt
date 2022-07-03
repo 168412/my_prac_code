@@ -1,0 +1,40 @@
+def rotate(b,k):
+    # return (b[-k::1] + b[0:-k])
+    for i in range(k):
+        b=[b[-1]] + b[0:-1]
+    return b
+
+
+
+# a=list(map(int,input("Enter the numbers seperated by comma(,)-: \n").split(',')))
+a=[1, 2, 3, 4, 5]
+k=int(input("Enter the rotation time-:\n"))
+b=rotate(a,k)
+for i in range(len(a)):
+    print(a[i],end = ' ')
+print('\n')
+for i in range(len(b)):
+    print(b[i],end = ' ')
+
+=====================================
+
+k=int(input())
+a=list(map(int,input().split(',')))
+for i in range(k):
+    a= a[-1:] + a[0:-1]
+
+for i in range(len(a)):
+    print(type(a[i]),end=" ")
+
+================================last soln
+def fun(l1,k):
+    for i in range(k):
+        l1=l1[-1:]+l1[:-1]
+    return l1
+
+if __name__=="__main__":
+    l=list(map(int,input().split(',')))
+    k=int(input())
+    l1=l
+    for i in fun(l1,k):
+        print(i,end=' ')

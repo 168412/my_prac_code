@@ -1,0 +1,81 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String str =sc.nextLine();
+        int len=str.length();
+        long nume=0,numo=0;
+        nume+=str.charAt(0) - '0';
+        for(int i=1; i<len;i++)
+        {
+            if(i%2==0)
+            {
+                nume+= str.charAt(i) - '0';
+            }
+            else
+            {
+                numo+= str.charAt(i) - '0';
+            }
+        }
+        System.out.println(Math.abs(nume-numo));
+    }
+}
+
+====================================================
+
+import java.util.*;
+public class Main
+{
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String str =sc.nextLine();
+        int len=str.length();
+        long nume=0,numo=0;
+        nume+=str.charAt(0) - '0';
+        for(int i=1; i<len;i++)
+        {
+            if(i%2==0)
+            {
+                nume+= (int)str.charAt(i) - '0';
+            }
+            else
+            {
+                numo+= (int)str.charAt(i) - '0';
+            }
+        }
+        System.out.println(Math.abs(nume-numo));
+    }
+}
+
+==============================
+
+l=list(map(int,input()))
+sume=0
+sumo=0
+for i in range(len(l)):
+    if i%2==0:
+        sumo+=l[i]
+    else:
+        sume+=l[i]
+print("difference is-: {} ".format(abs(sume-sumo)))
+
+
+===========================================
+
+l=input()
+sume=0
+sumo=0
+for i in range(len(l)):
+    if i%2==0:
+        sumo+=int(l[i])
+    else:
+        sume+=int(l[i])
+print("difference is-: {} ".format(abs(sume-sumo)))
+if (int(l)%11)==0:
+    print("Yes")
+else:
+    print("No")
+

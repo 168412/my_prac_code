@@ -1,0 +1,20 @@
+#  a=list(map(int,input("Enter the numbers seperated by comma(,)-: \n").split(',')))
+bank=[]
+principal=int(input())
+year=int(input())
+for i in range(0,2):
+    installment=int(input())
+    su=0
+    for j in range(0,installment):
+        time,roi=map(float,input().split(" "))
+        square=pow((1+roi),time*12)
+        emi=(principal*roi)/(1-1/square)
+        su+=emi
+    bank.append(su)
+if bank[0]>bank[1]:
+    print("Bank B")
+else:
+    print("Bank A")
+
+
+

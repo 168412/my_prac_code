@@ -1,0 +1,26 @@
+public class dig
+{
+	private static int j;
+
+	public static void main(String []args)
+	{
+		String str1 =args[0];
+		for(int i=1;i<args.length;i++)
+		{
+			str1 = str1+" "+args[i];
+		}
+		str1=str1.replaceAll("\\s","");
+		System.out.println("String without whitespace-: " +str1);
+	}
+}
+
+------------------------------------
+==================python
+
+def fun(st):
+    return st.replace(' ','')
+
+
+if __name__=="__main__":
+    st=input()
+    print(fun(st))

@@ -1,0 +1,33 @@
+testcases=int(input())
+for i in range(testcases):
+    tables,people=map(int,input().split(" "))
+    result=1
+
+if tables>=people:
+    print(result)
+else:
+    a_t2=people//tables
+    print("a_t2-:",a_t2)
+    
+    a_t1=a_t2+1
+    print('a_t1-:',a_t1)
+    
+    type1=people%tables
+    print('type1-:',type1)
+    
+    type2=tables-type1
+    print('type2-:',type2)
+    
+    fact=[1]
+    for i in range(1,people+1):
+        fact.append(i*fact[i-1])
+    
+    for i in range(type1):
+        result=result*fact[people]//(fact[a_t1]*fact[people-a_t1])
+        people=people-a_t1
+    
+    for i in range(type2):
+        result=result*fact[people]//(fact[a_t2]*fact[people-a_t2])
+        people=people-a_t2
+    
+print(result)

@@ -1,0 +1,75 @@
+package rahul;
+import java.util.*;
+
+public class Example
+{
+	static int min(int x, int y, int z)
+	{
+		if(x<=y && x<=z)
+			return x;
+		if(y<=x && y<=z)
+			return y;
+		else
+			return z;
+	}
+	
+	static int editDistDP(String str1, String str2, int m, int n)
+	{
+		int dp[][] = new int [m+1][n+1];
+		for(int i=0;i<=m;i++)
+		{
+			for(int j=0; j<=n;j++)
+			{
+				if(i==0)
+					dp[i][j]=j;
+				else if(j==0)
+					dp[i][j]=i;
+				else if(str1.charAt(i-1)==str2.charAt(j-1))
+					dp[i][j] = dp[i-1][j-1];
+				else
+					dp[i][j]=1+min(dp[i][j-1],
+									dp[i-1][j],
+									dp[i-1][j-1]);
+			}
+		}
+		return dp[m][n];
+	}
+	
+	public static void main(String args[] )
+	{
+		Scanner sc =new Scanner(System.in);
+		
+		String stra= sc.nextLine();
+		String strb = sc.nextLine();
+		String str1 = stra.trim();
+		String str2 = strb.trim();
+		System.out.println(editDistDP(str1, str2, str1.length(), str2.length())
+				);
+	}
+}
+
+===================================Python
+
+def fun(st1,st2,m,n):
+    if n==0:
+        return m
+    if m==0:
+        return n
+    if st1[m-1]==st2[n-1]:
+        return fun(st1,st2,m-1,n-1)
+    return 1 + min(fun(st1,st2,m,n-1),  #insert
+                   fun(st1,st2,m-1,n),
+                   fun(st1,st2,m-1,n-1))
+        
+
+
+if __name__=="__main__":
+    st1=input()
+    st2=input()
+    print(fun(st1,st2,len(st1),len(st2)))
+
+
+
+
+
+

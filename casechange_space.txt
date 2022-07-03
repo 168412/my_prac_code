@@ -1,0 +1,43 @@
+
+# print(chr(32+65))
+# print(chr(ord('A')+32)) 
+# ThisIsAnAutomationEra
+
+# string=input("Enter the string-:\n")
+string="BruceWayneIsBatman"
+a=list(string)
+for i in range(len(a)):
+    if a[i] >= 'A' and a[i] <= 'Z':
+        a[i] = chr(ord(a[i])+32)
+        if i != 0:
+            print(' ',end='')
+        print(a[i],end='') 
+    else:
+           print(a[i],end='')    
+
+========================================
+
+# s=input()
+s='ThisIsAnAutomationEra.'
+# s='This Is An Automation Era'
+for i in range(len(s)):
+    if s[i].isupper():
+        if i!=0:
+            print(' ',end='')
+            print(s[i].lower(),end='')
+        else:
+            print(s[i],end='')
+    else:
+        print(s[i],end='')
+
+=======================
+if __name__=="__main__":
+    s=input()
+    print(s[0].lower(),end='')
+    for i in range(1,len(s)):
+        if s[i].isupper():
+            print(" ",end='')
+            print(s[i].lower(),end='')
+        else:
+            print(s[i],end='')
+            

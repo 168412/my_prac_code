@@ -1,0 +1,94 @@
+def countWays(r,g,t,last):
+    
+    if (r<0 or g<0 or t<0):
+        return 0;
+    
+    if (r==1 and g==0 and t==0 and last==0):
+        return 1;
+    
+    if (r==0 and g==1 and t==0 and last==1):
+        return 1;
+    
+    if (r==0 and g==0 and t==1 and last==2):
+        return 1;
+    
+    if (last==0):
+        return (countWays(r-1,g,t,1)+
+                countWays(r-1,g,t,2));
+                
+    if (last==1):
+        return (countWays(r,g-1,t,0)+
+                countWays(r,g-1,t,2));
+                
+    if (last==2):
+        return (countWays(r,g,t-1,1)+
+                countWays(r,g,t-1,0));
+    
+
+def countutil(r,g,t):
+    
+    return ((countWays(r,g,t,0))+
+            (countWays(r,g,t,1))+
+            (countWays(r,g,t,2))
+            );
+
+# Driver code
+r=int(input("Enter Ruby of type R-:\n"))
+g=int(input("Garnet of G-:\n"))
+t=int(input("Topaz of type T-:\n"))
+
+print(countutil(r,g,t))
+
+======================================================================================
+
+Using DP
+
+-----------------
+
+MAX = 100
+ 
+# table to store to store results of subproblems
+dp = [[[[-1] * 4 for i in range(MAX)]
+                 for j in range(MAX)]
+                 for k in range(MAX)]
+                 
+def countWays(r,g,t,last):
+    if (r<0 or g<0 or t<0):
+        return 0;
+    
+    if (r==1 and g==0 and t==0 and last==0):
+        return 1;
+        
+    if (r==0 and g==1 and t==0 and last==1):
+        return 1;
+        
+    if (r==0 and g==0 and t==1 and last==2):
+        return 1;
+        
+    if (dp[r][g][t][last] != -1):
+        return dp[r][g][t][last];
+        
+    if (last==0):
+        dp[r][g][t][last] = (countWays(r-1,g,t,1) + countWays(r-1,g,t,2));
+        # print(dp[r][g][t][last])
+        
+    elif (last==1):
+        dp[r][g][t][last] = (countWays(r,g-1,t,0) + countWays(r,g-1,t,2));
+        # print(dp[r][g][t][last])
+    else:
+        dp[r][g][t][last] = (countWays(r,g,t-1,0) + countWays(r,g,t-1,1));
+        # print(dp[r][g][t][last])
+    # print(dp[r][g][t][last])
+    return dp[r][g][t][last];
+
+def countUtil(r,g,t):
+     
+    return (countWays(r,g,t, 0) +
+            countWays(r,g,t, 1) +
+            countWays(r,g,t, 2));
+   
+r,g,t=map(int,input("Enter value seperated by comma(,)-:\n").split(','))
+print(countUtil(r,g,t));
+        
+---------------LINK
+https://www.geeksforgeeks.org/ways-to-arrange-balls-such-that-adjacent-balls-are-of-different-types/

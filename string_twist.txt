@@ -1,0 +1,44 @@
+package rahul;
+import java.util.*;
+
+public class Example
+{
+
+	public static void main(String args[])
+	{
+	Scanner sc = new Scanner(System.in);
+	String str1=sc.nextLine();
+	String str2=sc.nextLine();
+	String str3=sc.nextLine();
+	
+	String s1 = "";
+	String s2 = "";
+	String s3="";
+	for(int i=0; i<str1.length();i++)
+	{
+		char c=str1.charAt(i);
+		if(str1.charAt(i)=='a'||str1.charAt(i)=='A'||str1.charAt(i)=='e'||str1.charAt(i)=='E'||str1.charAt(i)=='i'||str1.charAt(i)=='I'||str1.charAt(i)=='o'||str1.charAt(i)=='O'||str1.charAt(i)=='u'||str1.charAt(i)=='U')
+			s1=s1+'%';
+		else
+			s1=s1+c;	
+	}
+	
+	for(int i=0; i<str2.length();i++)
+	{
+		char c=str2.charAt(i);
+		if((c>='A' && c<='Z')||(c>='a' && c<='z'))
+		{
+			if(c == 'A' || c == 'a' || c == 'E' || c == 'e' || 
+                            c == 'I' || c == 'i' || c == 'O' || c == 'o' || c == 'U' || c == 'u')
+					s2 = s2 + c;
+			else
+				s2=s2+"#";
+		}
+		else
+			s2=s2+c;
+	}
+	s3=str3.toUpperCase();
+	System.out.println(s1+s2+s3);
+	}
+}
+

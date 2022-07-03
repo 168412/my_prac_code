@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Main
+{
+
+    static boolean ps(double n) 
+    {
+        if(n>=0)
+        {
+            double sr = Math.sqrt(n);
+            return ((sr*sr) == n);
+        }
+        return false;
+    }
+
+	public static void main(String [] args)
+	{
+		// stock prices on consecutive days
+        Scanner sc =new Scanner(System.in);
+        double i=sc.nextDouble();
+        System.out.print(ps(i));
+	}
+}
+
+==============================
+
+import math
+
+n=int(input())
+if n>=0:
+    sr=math.sqrt(n)
+    if sr*sr==float(n):
+        print("True")
+    else:
+        print("False")

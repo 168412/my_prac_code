@@ -1,0 +1,33 @@
+st=input()
+s=st.lower().strip()
+v_c=0
+c_c=0
+fr={}
+def fact(n):
+    if n==1:
+        return 1
+    else:
+        return n*fact(n-1)
+    
+for i in s:
+    if i=='a' or i=='e' or i=='i' or i=='o' or i=='u':
+        v_c+=1
+    else:
+        c_c+=1
+        
+out=fact(v_c)*fact(c_c+1)
+
+for item in s:
+    if (item in fr):
+        fr[item]+=1
+    else:
+        fr[item]=1
+    #fr[item]=s.count(item)
+
+for value in fr.values():
+    if value>1:
+        out=out//fact(value)
+print(out)
+
+# for key, value in freq.items():
+#         print ("% d : % d"%(key, value))

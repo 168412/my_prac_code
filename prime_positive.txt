@@ -1,0 +1,59 @@
+package rahul;
+import java.util.*;
+
+public class Example
+{
+	public static void prime(int no)
+	{
+		int m=no/2, flag=0;
+		if(no == 0 || no == 1)
+		{
+			System.out.println(no+" is not a prime number.");
+		}
+		else
+		{
+			for(int i=2; i<=m;i++)
+			{
+				if(no%i==0) {
+					System.out.println(no+ " is not a prime number. ");
+				flag=1;
+				break;
+				}
+			}
+			if(flag==0)
+				System.out.println(no+ " is a prime number. ");
+		}
+	}
+	public static void main(String [] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int no = sc.nextInt();
+		if(no>=0)
+			prime(no);
+		else
+			System.out.println("please enter the positive number");
+	}
+}
+
+==================================================
+
+def fun(n):
+    m=n//2;
+    flag=True
+    if n<0:
+        print("Please enter positive number.")
+    elif n==0 or n==1:
+        print("{} is not a prime number.".format(n))
+    else:
+        for i in range(2,m):
+            if n%i==0:
+                print("{} is not a prime number.".format(n))
+                flag=False
+                break
+        if flag==True:
+            print("{} is a prime number.".format(n))
+            
+if __name__=="__main__":
+    l=list(map(int,input().split(" ")))
+    for i in l:
+        fun(i)

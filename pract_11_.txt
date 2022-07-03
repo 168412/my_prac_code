@@ -1,0 +1,24 @@
+n=int(input())
+if (n*n)%10==n%10:
+    print('Yes')
+else:
+    print('No')
+===============================
+
+s=input()
+if s[0].isupper():
+    print('UpperCase')
+elif s[0].islower():
+    print('LowerCase')
+elif s[0].isnumeric():
+    print('Number')
+else:
+    print("Symbol")
+
+===================================
+# s=input().split(' ')
+s=("ab2 ab4 ab6").split(' ')
+for i in range(len(s)):
+    for j in range(len(s[i])):
+        if s[i][j].isnumeric():
+            print(s[i][:j]*int(s[i][j:]))

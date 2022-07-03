@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main
+{
+public static void main(String []args)
+{
+    Scanner sc = new Scanner(System.in);
+    int num=sc.nextInt();
+    int out=1;
+    while(num>0)
+    {
+        out = out*(num%10);
+        num=num/10;
+    }
+    System.out.println(out);
+}
+}
+
+==============================================
+a=list(map(int,input()))
+mul=1
+for i in a:
+    mul*=i
+print(mul)

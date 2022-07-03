@@ -1,0 +1,86 @@
+package rahul;
+import java.util.*;
+public class Example
+{
+	static int val(char c)
+	{
+		if(c>='0' && c<='9')
+			return (int)c -'0';
+		else if(c>='A' && c<='Z')
+			return (int)c -'A' + 10;
+		else
+			return (int)c -'a' + 10;
+	}
+	
+	static int toDec(String str, int base)
+	{
+		int len = str.length();
+		int power=1, num=0;
+		for(int i =(len-1);i>=0;i--)
+		{
+			int c = val(str.charAt(i));
+			System.out.println(c);
+			if(c >=base)
+			{
+				System.out.println("invalid number");
+				return -1;
+			}
+			num+= c*power;
+			power=power*base;
+				
+		}
+		return num;
+	}
+	
+	public static void main(String []args)
+	{
+		Scanner sc = new Scanner(System.in);
+		String str =sc.nextLine();
+		int base = sc.nextInt();
+		System.out.println(toDec(str, base));
+	}
+	
+}
+
+=========================================================================================================================
+
+package rahul;
+import java.util.*;
+public class Example
+{
+	static int val(char c)
+	{
+		if(c>='0' && c<='9')
+			return (int)c -'0';
+		else if(c>='A' && c<='Z')
+			return (int)c -'A' + 10;
+		else
+			return (int)c -'a' + 10;
+	}
+	
+	static int toDec(String str, int base)
+	{
+		int len = str.length();
+		int power=1, num=0;
+		for(int i =(len-1);i>=0;i--)
+		{
+			int c = val(str.charAt(i));
+			num+= c*power;
+			power=power*base;
+				
+		}
+		return num;
+	}
+	
+	public static void main(String []args)
+	{
+		Scanner sc = new Scanner(System.in);
+		String str =sc.nextLine();
+		int base = sc.nextInt();
+		System.out.println(toDec(str, base));
+	}
+	
+}
+===============
+n=input()
+print(int(n,17))

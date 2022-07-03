@@ -1,0 +1,47 @@
+find all permutaion of string-:
+def toString(list1):
+    return ''.join(list1)
+
+def permute(s,i,j):
+    if i==j:
+        print(toString(s))
+        return
+    else:
+        for k in range(i,j+1):
+            s[i],s[k]=s[k],s[i]
+            permute(s,i+1,j)
+            s[i],s[k]=s[k],s[i]
+            
+s=list(input("Enter string-:"))
+n=len(s)
+permute(s,0,n-1)
+================================================================
+
+min1=10000000
+_count=0
+def permute(s,i,j,p):
+    global min1,_count
+    if i==j:
+        str1="".join(s)
+        q=int(str1)
+        if (q-p>0 and q<min1):
+            min1=q
+            _count=1
+        
+    else:
+        for k in range(i,j+1):
+            s[i],s[k]=s[k],s[i]
+            permute(s,i+1,j,p)
+            s[i],s[k]=s[k],s[i]
+            
+    return min1
+    
+a,b=map(str,input("Enter no. seperated by space-:").split(' '))
+s=list(a)
+j=len(s)
+p=int(b)
+h=permute(s,0,j-1,p)
+if _count==1:
+    print(h)
+else:
+    print(-1)

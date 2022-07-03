@@ -1,0 +1,80 @@
+k=['']*120
+k[0]="zero"
+k[1]="one"
+k[2]="two"
+k[3]="three"
+k[4]="four"
+k[5]="five"
+k[6]="six"
+k[7]="seven"
+k[8]="eight"
+k[9]="nine"
+k[10]="ten"
+k[11]="eleven"
+k[12]="twelve"
+k[13]="thirteen"
+k[14]="fourteen"
+k[15]="fifteen"
+k[20]="twenty"
+k[30]="thirty"
+k[40]="forty"
+k[50]="fifty"
+k[80]="eighty"
+k[100]="hundred"
+
+def vowel(s):
+    count=0
+    for i in s:
+        if i=='a' or i=='e' or i=='i' or i=='o' or i=='u':
+            count+=1
+    # print(count)
+    return count
+
+def word_finder(n):
+    if k[n]!="":
+        return k[n]
+    if n<20 and n>15:
+        k[n]=k[n%10]+""+"teen"
+        return k[n]
+    if n%10==0:
+        k[n]=k[n//10]+""+"ty"
+        return k[n]
+    if n>100:
+        return "greater 100"
+    k[n]=k[(n//10)*10]+k[n%10]
+    return k[n]
+    
+a=int(input())
+l=list(map(int,input().split(" ")))
+su1=0
+su2=0
+for i in range(a):
+    su1+=vowel(word_finder(l[i]))
+
+    
+for i in range(a-1):
+    for j in range(1,a):
+        if l[i]+l[j]==su1:
+            su2+=1
+
+print(word_finder(su2))
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

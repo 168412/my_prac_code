@@ -1,0 +1,14 @@
+l1=list(map(int,input().split(',')))
+t1=l1
+t1.sort()
+l2=[]
+l2.append(t1[0])
+l2.append(t1[-1])
+while (len(t1)>3):
+    t1=t1[1:-1]
+    t1.sort()
+    l2.append(t1[0])
+    l2.append(t1[-1])
+if len(t1)!=2:
+    l2.append(t1[1])
+print(l2)

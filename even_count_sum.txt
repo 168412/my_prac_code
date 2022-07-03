@@ -1,0 +1,22 @@
+def permutation(l,h,k):
+    odd_count=(h+1)//2-l//2
+    even_count=h//2-(l-1)//2 
+    
+    print("odd count-:",odd_count)
+    print("even_count-:",even_count)
+    
+    even_sum=1
+    odd_sum=0
+    
+    for i in range(k):
+        pre_even=even_sum
+        pre_odd=odd_sum
+        
+        even_sum=pre_even*even_count + pre_odd*odd_count
+        odd_sum=pre_even*odd_count + pre_odd*even_count
+        
+    return even_sum
+    
+l,h=map(int,input().split(" "))
+k=int(input())
+print(permutation(l,h,k))

@@ -1,0 +1,45 @@
+package rahul;
+import java.util.*;
+
+public class Example
+{
+	public static int maxProfit(int [] arr)
+	{
+		int n=arr.length;
+		int max=arr[0],sum=arr[0];
+	
+		for(int i=1; i<n; i++)
+		{
+			if(arr[i] > arr[i-1]) 
+			{
+				sum =sum + arr[i];
+				max = Math.max(max, sum);
+			}
+			else{
+			max = Math.max(max, sum);
+			sum=arr[i];}
+		}
+		return Math.max(max,sum);
+	}
+	
+	//driver code
+	public static void main(String [] args)
+	{
+		// stock prices on consecutive days
+        int arr[] = {  100, 180, 260, 310, 40, 535, 695 };
+        System.out.println(maxProfit(arr));
+	}
+}
+
+===========================================
+
+a=list(map(int,input().split(",")))
+tmp=a[0]
+m=0
+for i in range(1,len(a)):
+    if a[i]>a[i-1]:
+        tmp+=a[i]
+    else:
+        m=max(m,tmp)
+        tmp=a[i]
+print(max(m,tmp))

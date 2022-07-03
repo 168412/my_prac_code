@@ -1,0 +1,50 @@
+import java.util.*;
+
+public class Main
+{
+//001 010 101 010 01
+    static int max(String str, int n) 
+    {
+        int tmp=0;
+        int fout=0;
+       // char arr[] = new char[len+1];
+        char arr[] =str.toCharArray();
+        for(int i=1; i<=(arr.length);i++)
+        {
+            tmp=tmp+(int)arr[i-1]-'0';
+            if(i%3==0){
+            fout=Math.max(tmp,fout);
+            tmp=0;
+            }
+        }
+        return Math.max(tmp,fout);
+    }
+
+	public static void main(String [] args)
+	{
+		// stock prices on consecutive days
+        Scanner sc =new Scanner(System.in);
+        String str=sc.nextLine();
+        int n =sc.nextInt();
+        System.out.print(max(str,n));
+	}
+}
+
+==========================================
+
+def fun(a):
+    tmp=0
+    max_c=0
+    for i in range(len(a)):
+        tmp+=int(a[i])
+        if i%3==0:
+            max_c=max(max_c,tmp)
+            tmp=0
+    print(max(max_c,tmp))
+        
+            
+if __name__== "__main__":
+    a= input()
+    fun(a.strip())
+    
+# 110 010 001 010 010 001 110 101 01

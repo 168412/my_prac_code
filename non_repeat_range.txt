@@ -1,0 +1,7 @@
+n1= int(input("Enter first number-:\n"))
+n2= int(input("Enter second number-:\n"))
+count=0
+for i in range(n1,n2+1):
+    if(len(set(str(i))) == len(str(i))):
+        count+=1
+print(count)

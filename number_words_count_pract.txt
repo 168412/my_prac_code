@@ -1,0 +1,18 @@
+st=list(map(str,input().split(',')))
+w_c=0
+n_c=0
+flag=True
+for i in st:
+    if i.isalpha():
+        w_c+=1
+    
+    elif i.isnumeric():
+        n_c+=1
+    else:
+        print("Invalid input.")
+        flag=False
+        break
+if flag ==True:
+    print("words are-: {}".format(w_c))
+    print("numbers are-: {}".format(n_c))
+        

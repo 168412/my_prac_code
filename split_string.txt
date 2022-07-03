@@ -1,0 +1,6 @@
+a= list(map(int,input("Enter first number-:\n").split(',')))
+k=int(input("Enter the kth number-:\n"))
+
+b=a[k::1]+a[:k]
+for i in range(len(b)):
+    print(b[i],end=' ')

@@ -1,0 +1,47 @@
+st=input("Enter your string-: ")
+flag=False
+for i in st:
+    if not (i.isdigit() or i.isalpha()):
+        print("please remove special char.")
+        flag=True
+        break
+if(flag==False):    
+    st1=st.replace("8","")
+    st2=st1.replace("53","")
+    print(st2.lower())
+
+
+=================================================
+
+a=list(map(int,input("Enter your numbers seperated by comma(,)-:\n").split(",")))
+if len(a)<4:
+    print("Invalid input")
+else:
+    new=a.sort()
+    print(a[-1]+a[-2]+a[-3])
+
+==================================================
+
+a=list(map(int,input("Enter your numbers seperated by comma(,)-:\n").split(",")))
+sum=-1000000
+for i in range(0,len(a)):
+    for j in range(i+1,len(a)):
+        for k in range(j+1,len(a)):
+            sum=max(sum,a[i]+a[j]+a[k])
+print(sum)    
+
+==========================================
+
+l1=input()
+l2=input()
+l3=[]
+for i in l1:
+    for j in l2:
+        if i==j and i!=' ':
+            l3.append(i)
+l4=list(set(l3))
+l4.sort()
+print(l4)
+print(l4[::-1])
+=========================================
+
